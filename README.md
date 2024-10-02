@@ -24,6 +24,8 @@ Welcome to the Frontend part of NavDesk. This is a Co-Working App project provid
 
 This project provides a rich front-end application built with React, TypeScript, Vite, and MUI. It interfaces with the NavDesk backend server to manage access and administration within a co-working space. Users can register, log in, view rooms, make bookings, and admins have additional functionalities like managing room assignments and viewing extensive reports.
 
+<img src="./public/event.png" width="500" height="auto" align="center">
+
 ## Deploy 🚀
 
 <div align="center">
