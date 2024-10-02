@@ -8,6 +8,7 @@ import { New } from '../Bookings/New/New.tsx'
 import { Current } from '../Bookings/Current/Current.tsx'
 import { Reports } from '../Reports/Reports.tsx'
 import { Users } from '../Users/Users.tsx'
+import { Rooms } from '../Rooms/Rooms.tsx'
 
 export const Body = () => {
   return (
@@ -21,6 +22,7 @@ export const Body = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/reports" element={<Reports />} />
         <Route path="/users" element={<Users />} />
+        <Route path="/rooms" element={<Rooms />} />
     </Routes>
     </>
   )
