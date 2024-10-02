@@ -9,6 +9,7 @@ import { Current } from '../Bookings/Current/Current.tsx'
 import { Reports } from '../Reports/Reports.tsx'
 import { Users } from '../Users/Users.tsx'
 import { Rooms } from '../Rooms/Rooms.tsx'
+import { Pricing } from '../Pricing/Pricing.tsx'
 
 export const Body = () => {
   return (
@@ -23,6 +24,7 @@ export const Body = () => {
         <Route path="/reports" element={<Reports />} />
         <Route path="/users" element={<Users />} />
         <Route path="/rooms" element={<Rooms />} />
+        <Route path="/pricing" element={<Pricing />} />
     </Routes>
     </>
   )

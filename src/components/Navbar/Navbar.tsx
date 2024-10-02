@@ -28,10 +28,13 @@ export const Navbar = () => {
     };
 
     const navigate = useNavigate();
-    const handleCloseNavMenu = (path: string) => { 
+    const handleOnClick = (path: string) => { 
           navigate(path);
       };
-
+    
+    const handleCloseNavMenu = () => {
+      setAnchorElNav(null);
+    }
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
     };
@@ -45,7 +48,7 @@ export const Navbar = () => {
                         variant="h6"
                         noWrap
                         component="a"
-                        href="#app-bar-with-responsive-menu"
+                        href="/"
                         sx={{
                             mr: 2,
                             display: { xs: "none", md: "flex" },
@@ -56,7 +59,7 @@ export const Navbar = () => {
                             textDecoration: "none",
                         }}
                     >
-                        LAS NAVES
+                        NAV DESK
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -86,9 +89,9 @@ export const Navbar = () => {
                             onClose={handleCloseNavMenu}
                             sx={{ display: { xs: "block", md: "none" } }}
                         >
-                            <MenuItem onClick={() => { handleCloseNavMenu('/rooms'); handleCloseUserMenu(); }}><Typography textAlign="center">Rooms</Typography></MenuItem>
-                            <MenuItem onClick={() => { handleCloseNavMenu('/pricing'); handleCloseUserMenu(); }}><Typography textAlign="center">Pricing</Typography></MenuItem>
-                            <MenuItem onClick={() => { handleCloseNavMenu('/bookings'); handleCloseUserMenu(); }}><Typography textAlign="center">Booking</Typography></MenuItem>
+                            <MenuItem onClick={() => { handleOnClick('/rooms'); handleCloseUserMenu(); }}><Typography textAlign="center">Rooms</Typography></MenuItem>
+                            <MenuItem onClick={() => { handleOnClick('/pricing'); handleCloseUserMenu(); }}><Typography textAlign="center">Pricing</Typography></MenuItem>
+                            <MenuItem onClick={() => { handleOnClick('/bookings'); handleCloseUserMenu(); }}><Typography textAlign="center">Booking</Typography></MenuItem>
                         </Menu>
                     </Box>
                     <SailingIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
@@ -108,17 +111,17 @@ export const Navbar = () => {
                             textDecoration: "none",
                         }}
                     >
-                        LOGO
+                        NAV DESK
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
                     <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-                        <Button onClick={() => handleCloseNavMenu('/rooms')} sx={{ my: 2, color: "white", display: "block" }}>
+                        <Button onClick={() => handleOnClick('/rooms')} sx={{ my: 2, color: "white", display: "block" }}>
                             Rooms
                         </Button>
-                        <Button onClick={() => handleCloseNavMenu('/pricing')} sx={{ my: 2, color: "white", display: "block" }}>
+                        <Button onClick={() => handleOnClick('/pricing')} sx={{ my: 2, color: "white", display: "block" }}>
                             Pricing
                         </Button>
-                        <Button onClick={() => handleCloseNavMenu('/bookings')} sx={{ my: 2, color: "white", display: "block" }}>
+                        <Button onClick={() => handleOnClick('/bookings')} sx={{ my: 2, color: "white", display: "block" }}>
                             Booking
                         </Button>
                     </Box>
