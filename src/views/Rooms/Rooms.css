@@ -3,31 +3,34 @@
 }
 
 .backgroundR {
-   position: relative;
-   overflow: hidden;
-   min-height: 100vh;
-   background-image: url('../../../public/nave.png'); 
-   background-size: cover; 
-   background-position: center;
-   }
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  background-size: cover; 
+  background-position: center;
+}
  
- .backgroundR::before {
+.backgroundR::before {
    content: "";
    position: absolute;
    top: 0;
    left: 0;
    right: 0;
    bottom: 0;
+   background-image: url('../../../public/nave.png'); 
+   background-size: cover; 
+   background-position: center;
    z-index: -1;
- }
- 
- .cards {
-   position: relative;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   z-index: 2;
- }
+   filter: brightness(50%);
+}
+  
+  .cards {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 2;
+  }
  
  .card-container {
    background-color: rgba(93, 127, 63, 0.85);
