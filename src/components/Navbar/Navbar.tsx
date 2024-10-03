@@ -92,6 +92,7 @@ export const Navbar = () => {
                             <MenuItem onClick={() => { handleOnClick('/rooms'); handleCloseUserMenu(); }}><Typography textAlign="center">Rooms</Typography></MenuItem>
                             <MenuItem onClick={() => { handleOnClick('/pricing'); handleCloseUserMenu(); }}><Typography textAlign="center">Pricing</Typography></MenuItem>
                             <MenuItem onClick={() => { handleOnClick('/bookings'); handleCloseUserMenu(); }}><Typography textAlign="center">Booking</Typography></MenuItem>
+                            <MenuItem onClick={() => { handleOnClick('/register'); handleCloseUserMenu(); }}><Typography textAlign="center">Register</Typography></MenuItem>
                         </Menu>
                     </Box>
                     <SailingIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
@@ -123,6 +124,9 @@ export const Navbar = () => {
                         </Button>
                         <Button onClick={() => handleOnClick('/bookings')} sx={{ my: 2, color: "white", display: "block" }}>
                             Booking
+                        </Button>
+                        <Button onClick={() => handleOnClick('/register')} sx={{ my: 2, color: "white", display: "block" }}>
+                            Register
                         </Button>
                     </Box>
                     </Box>
