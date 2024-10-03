@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Formik } from "formik";
 import * as yup from "yup";
-import { blue } from "@mui/material/colors"
 import {
   Box,
   Button,
@@ -31,7 +30,7 @@ const initialValuesLogin = {
 };
 
 const Form = () => {
-  const [loginMode, setLoginMode] = useState(true); // true for login, false for register
+  const [loginMode, setLoginMode] = useState(true);
   const navigate = useNavigate();
 
   const handleSubmit = async (values: { email: string; password: string }, onSubmitProps: any) => {
@@ -59,7 +58,6 @@ const Form = () => {
     } else {
       console.error('Error:', data);
     }
-
     onSubmitProps.resetForm();
   };
 
@@ -107,6 +105,11 @@ const Form = () => {
             <Button type="submit" variant="contained">
               {loginMode ? "Login" : "Register"}
             </Button>
+            <Typography style={{ color: '#fff', margin: 20}}>
+              {loginMode
+                ? "Don't have an account? Register here."
+                : "Already have an account? Login here."}
+            </Typography>
             <Button
               type="button"
               color="secondary"
@@ -117,11 +120,6 @@ const Form = () => {
             >
               {loginMode ? "Switch to Register" : "Switch to Login"}
             </Button>
-            <Typography style={{ color: '#fff' }}>
-              {loginMode
-                ? "Don't have an account? Register here."
-                : "Already have an account? Login here."}
-            </Typography>
           </Box>
         </form>
       )}
