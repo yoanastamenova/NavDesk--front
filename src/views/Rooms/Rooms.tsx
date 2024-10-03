@@ -40,6 +40,7 @@ export const Rooms: React.FC = () => {
   }, []);
 
   const navigate = useNavigate();
+  
   const handleClick = (path: string) => {
     navigate(path)
   }
