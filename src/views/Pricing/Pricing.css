@@ -1,0 +1,64 @@
+.content-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+  
+  .price-section, .plan-section {
+    position: relative;
+    flex: 1;
+  }
+  
+  .price-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .plan-overlay, .price-overlay {
+    position: absolute;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .price-overlay {
+    top: -80px;
+  }
+  .table-container {
+    flex: 1;
+    margin-left: 80px;
+  }
+  
+  .image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .title{
+    font-size: 50px;
+    margin: 50px;
+    padding: 50px;
+  }
+
+  .table-container .MuiTable-root {
+    background-color: #ceacb8;
+    color: #e6cccc; 
+  }
+  
+  .table-container .MuiTableHead-root {
+    background-color: #5bba93; 
+  }
+  
+  .table-container .MuiTableCell-root {
+    border-bottom: 1px solid #e094c2;
+  }
+
+  .caption {
+    background-color: #23a441;
+  }
