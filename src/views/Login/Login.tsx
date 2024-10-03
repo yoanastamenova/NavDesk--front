@@ -1,23 +1,21 @@
 import { Box, Typography } from "@mui/material";
+import Form from "./Form";
+import { Navbar } from "../../components/Navbar/Navbar";
 import { SailingOutlined } from "@mui/icons-material";
 
 const Login = () => {
   return (
-    <Box>
-      <Box width="100%" p="1rem 6%" textAlign="center">
-        <Typography fontWeight="bold" fontSize="32px" color="primary">
-          Nav Desk
-          <SailingOutlined />
-        </Typography>
-      </Box>
-
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>      
+    <Navbar />
       <Box
         p="2rem"
         m="2rem auto"
         borderRadius="1.5rem"
       >
         <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
-          Welcome to Nav Desk, we are happy to have you!
+        <SailingOutlined sx={{ p:1}}/>
+            Let's sail to new lands together
+            <SailingOutlined sx={{ p:1}}/>
         </Typography>
         <Form />
       </Box>
