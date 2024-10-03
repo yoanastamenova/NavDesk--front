@@ -47,6 +47,7 @@ export const Rooms: React.FC = () => {
   return (
     <>
       <Navbar />
+      <div className="backgroundR">
       <div className="cards" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
         {rooms.map((room: Room) => (
           <Card sx={{ maxWidth: 500, m: 5 }} key={room.id}>
@@ -54,7 +55,7 @@ export const Rooms: React.FC = () => {
               sx={{ height: 340, width: 400 }}
               image={room.image}
               title={room.room_name}
-            />
+              />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
                 {room.room_name}
@@ -71,6 +72,7 @@ export const Rooms: React.FC = () => {
           </Card>
         ))}
       </div>
+        </div>
     </>
   );
 }

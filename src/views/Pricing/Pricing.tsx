@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar } from '../../components/Navbar/Navbar';
 import plan from "/floor_plan.jpg";
 import "./Pricing.css";
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import { Box, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 
 export const Pricing = () => {
   function createData(name: string, price: number, extend_time: number, extend_day: number, hours: string) {
@@ -19,9 +19,10 @@ export const Pricing = () => {
   return (
     <>
       <Navbar />
-      <div className="content-container">
-      <div className='price-section'>
-      <div className="price-overlay">Our Prices</div>
+      <Box className='background-img'>
+        <div className="content-container">
+          <div className='price-section'>
+            <div className="price-overlay">Our Prices</div>
         <TableContainer component={Paper} className="table-container">
           <Table sx={{ minWidth: 650 }} aria-label="caption table">
             <caption className='caption'>Prices may vary due to high demand</caption>
@@ -57,6 +58,7 @@ export const Pricing = () => {
         </div>
         </div>
       </div>
+      </Box>
     </>
   )
 }

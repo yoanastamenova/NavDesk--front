@@ -1,3 +1,43 @@
 .cards{
    gap: 20px;
 }
+
+.backgroundR {
+   position: relative;
+   overflow: hidden;
+   min-height: 100vh;
+   background-image: url('../../../public/nave.png'); 
+   background-size: cover; 
+   background-position: center;
+   background-repeat: repeat-y; 
+   z-index: -1;
+
+ }
+ 
+ .backgroundR::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: rgba(0, 0, 0, 0.4); 
+   z-index: -1;
+ }
+ 
+ .cards {
+   position: relative;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   z-index: 2;
+ }
+ 
+ .card-container {
+   background-color: rgba(93, 127, 63, 0.85);
+   border-radius: 10px;
+   padding: 20px;
+   margin: 20px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ }
+ 
