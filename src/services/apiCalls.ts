@@ -14,3 +14,18 @@ export const registerUser = async (credentials: { email: string; password: strin
   const result = await request.json();
   return result;
 }
+
+export const loginUser = async(credentials: { email: string; password: string }) => {
+  const request = await fetch(`${URL}/auth/login`, 
+  {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(credentials)
+  });
+
+const result = await request.json();
+
+return result;
+}
