@@ -29,3 +29,15 @@ const result = await request.json();
 
 return result;
 }
+
+export const createBooking = async (data: any, token: string) => {
+  const response = await fetch(`${URL}/access/reserve`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`
+    },
+    body: JSON.stringify(data)
+  })
+  return await response.json()
+}
