@@ -15,5 +15,5 @@
     background-size: cover;
     background-position: center;
     filter: brightness(50%);
-    z-index: -1; /* Place the pseudo-element behind the content */
+    z-index: -1; 
   }
