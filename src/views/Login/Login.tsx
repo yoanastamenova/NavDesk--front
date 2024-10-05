@@ -1,5 +1,4 @@
 import { Box, Typography } from "@mui/material";
-import Form from "./Form";
 import { Navbar } from "../../components/Navbar/Navbar";
 import "./Login.css"
 
@@ -15,7 +14,6 @@ const Login = () => {
         <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
             Let's sail to new lands together
         </Typography>
-        <Form />
       </Box>
     </Box>
   );

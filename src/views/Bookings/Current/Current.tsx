@@ -5,7 +5,7 @@ export const Current = () => {
   return (
     <>
     <Navbar />
-    <div>Current</div>
+    <div>Profile</div>
     </>
   )
 }
