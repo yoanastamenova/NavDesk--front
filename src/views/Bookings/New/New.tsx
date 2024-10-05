@@ -12,7 +12,7 @@ import {
   InputLabel,
   Select
 } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { createBooking } from '../../../services/apiCalls';
 import "./New.css"
 
@@ -28,7 +28,6 @@ export const New = () => {
   const passportString = localStorage.getItem("passport");
   const passport = passportString ? JSON.parse(passportString) : null;
 
-  // Handles changes for text/select fields
   const handleChange = (e:any) => {
     const { name, value } = e.target;
     setBookingDetails(prevDetails => ({
@@ -45,7 +44,6 @@ export const New = () => {
     { id: 5, name: "Sevilla" },
   ];
 
-  // Specifically handle datetime changes
   const handleDateTimeChange = (e:any) => {
     const { name, value } = e.target;
     setBookingDetails(prevDetails => ({
@@ -143,6 +141,12 @@ export const New = () => {
             </Button>
           </Box>
         </Paper>
+        <Typography textAlign="center" variant="body2" sx={{ mt: 2 }}>
+              Not sure which room to choose? Go check our room info here {' '}
+              <Button onClick={() => navigate('/rooms')} sx={{ cursor: 'pointer' }}>
+                Rooms
+              </Button>
+            </Typography>
       </Container>
       </div>
     </>

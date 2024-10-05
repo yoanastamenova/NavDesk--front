@@ -17,8 +17,8 @@ export const Body = () => {
     <Routes>
         <Route path="*" element={<Error />} />
         <Route path="/" element={<Home />} />
-        <Route path="/bookings" element={<Current />} />
         <Route path="/bookings/new" element={<New />} />
+        <Route path="/bookings" element={<Current />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/reports" element={<Reports />} />
@@ -29,3 +29,5 @@ export const Body = () => {
     </>
   )
 }
+
+//TODO protect new booking
