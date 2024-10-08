@@ -72,3 +72,25 @@ export const getRoomStatus = async (roomId: string) => {
 
   return await response.json();
 };
+
+export const checkIn = async (id: string, token: string) => {
+  const response = await fetch(`${URL}/access/check-in/${id}`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    }
+  });
+  return response.json();
+};
+
+export const checkOut = async (id: string, token: string) => {
+  const response = await fetch(`${URL}/access/check-out/${id}`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    }
+  });
+  return response.json();
+};
