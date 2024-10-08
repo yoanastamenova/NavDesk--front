@@ -57,3 +57,18 @@ export const getUserBookings = async (token: string) => {
 
   return await response.json();
 };
+
+export const getRoomStatus = async (roomId: string) => {
+  const response = await fetch(`${URL}/rooms/${roomId}/current-state`, {
+    method: "GET",
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+
+  if (!response.ok) {
+    throw new Error(`An error has occurred: ${response.status} - ${response.statusText}`);
+  }
+
+  return await response.json();
+};
