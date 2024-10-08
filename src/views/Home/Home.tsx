@@ -6,6 +6,7 @@ import entrada from '/entrada.png';
 import ramp from '/ramp.png';      
 import './Home.css';
 import Test from '../../components/Testimonials/Test';
+import baner from '/baner.png'
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -65,7 +66,7 @@ export const Home = () => {
         </Typography>
         
         <Typography variant="h4" gutterBottom sx={{ mt: 4 }}>
-          Opinions
+          Customer Opinions
         </Typography>
         <Divider sx={{ mb: 2 }} />
         <Test/>
@@ -75,6 +76,7 @@ export const Home = () => {
         </Typography>
         <Divider sx={{ my: 2 }} />
       </Container>
+        <img src={baner} alt="Biker" className="darker-image" style={{ width: '100%', height: '50vh' }} />
     </>
   );
 };
