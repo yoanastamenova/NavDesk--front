@@ -41,3 +41,19 @@ export const createBooking = async (data: any, token: string) => {
   })
   return await response.json()
 }
+
+export const getUserBookings = async (token: string) => {
+  const response = await fetch(`${URL}/access/user_bookings`, {
+    method: "GET",
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }
+  });
+
+  if (!response.ok) {
+    throw new Error(`An error has occured: ${response.status} - ${response.statusText}`);
+  }
+
+  return await response.json();
+};
