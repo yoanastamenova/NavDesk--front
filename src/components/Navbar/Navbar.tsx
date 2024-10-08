@@ -109,6 +109,8 @@ export const Navbar = () => {
                     >
                         <MenuItem onClick={() => handleOnClick('/rooms')}><Typography textAlign="center">Rooms</Typography></MenuItem>
                         <MenuItem onClick={() => handleOnClick('/pricing')}><Typography textAlign="center">Pricing</Typography></MenuItem>
+                        <MenuItem onClick={() => handleOnClick('/availability')}><Typography textAlign="center">Availability</Typography></MenuItem>
+                        <MenuItem onClick={() => handleOnClick('/reception')}><Typography textAlign="center">Reception</Typography></MenuItem>
                         <MenuItem onClick={() => handleOnClick('/bookings')}><Typography textAlign="center">Booking</Typography></MenuItem>
                         <MenuItem onClick={() => handleOnClick('/register')}><Typography textAlign="center">Register</Typography></MenuItem>
                     </Menu>
@@ -116,6 +118,8 @@ export const Navbar = () => {
                 <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
                     <Button onClick={() => handleOnClick('/rooms')} sx={{ my: 2, color: "white", display: "block" }}>Rooms</Button>
                     <Button onClick={() => handleOnClick('/pricing')} sx={{ my: 2, color: "white", display: "block" }}>Pricing</Button>
+                    <Button onClick={() => handleOnClick('/availability')} sx={{ my: 2, color: "white", display: "block" }}>Availability</Button>
+                    <Button onClick={() => handleOnClick('/reception')} sx={{ my: 2, color: "white", display: "block" }}>Reception</Button>
                     <Button onClick={() => handleOnClick('/bookings')} sx={{ my: 2, color: "white", display: "block" }}>Booking</Button>
                     <Button onClick={() => handleOnClick('/register')} sx={{ my: 2, color: "white", display: "block" }}>Register</Button>
                 </Box>

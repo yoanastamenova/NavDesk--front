@@ -6,7 +6,7 @@
     height: 100vh;
     text-align: center;
     position: relative;
-    overflow: hidden; /* Prevents the pseudo-element from spilling out */
+    overflow: hidden; 
   }
   
   .error-container::before {
@@ -16,7 +16,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../../../public/errorbg.jpg'); /* Adjust path as needed */
+    background-image: url('/errorbg.jpg'); 
     background-size: cover;
     background-position: center;
     filter: blur(2px) brightness(70%);
@@ -26,7 +26,7 @@
   .error-code {
     font-size: 72px;
     font-weight: bold;
-    color: #FFFFFF; /* Ensuring visibility against a possibly dark background */
+    color: #FFFFFF; 
     
   }
   
