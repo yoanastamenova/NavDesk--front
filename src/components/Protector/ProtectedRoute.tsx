@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Navigate } from 'react-router-dom';
-import { RouteProps } from 'react-router-dom';
 
 interface ProtectedRouteProps {
   path: string;

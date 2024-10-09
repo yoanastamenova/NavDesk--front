@@ -1,7 +1,7 @@
 import { Box, Button, Container, Paper, TextField, Typography, Link } from '@mui/material';
 import { Navbar } from '../../components/Navbar/Navbar';
 import { useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { loginUser } from '../../services/apiCalls';
 import "./Login.css"
 import { jwtDecode } from 'jwt-decode';

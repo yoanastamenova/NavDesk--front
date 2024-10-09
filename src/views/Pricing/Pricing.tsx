@@ -1,4 +1,3 @@
-import React from 'react';
 import { Navbar } from '../../components/Navbar/Navbar';
 import plan from "/floor_plan.jpg";
 import "./Pricing.css";

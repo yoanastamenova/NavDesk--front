@@ -1,25 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Button, TextField, Box, Select, MenuItem, FormControl, InputLabel, Typography, Divider } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { Navbar } from '../../components/Navbar/Navbar';
 import { getDailyReport, getDateReport, getRoomReport } from '../../services/apiCalls';
 
-// Define the type for report entries
-type ReportEntry = {
-    id: number;
-    user_id: number;
-    room_id: number;
-    entry_datetime: string;
-    exit_datetime: string;
-    state: string;
-    current_occupants: number;
-};
 
-// Define the type for report data
 type ReportData = {
     total_entries: number;
     total_absences: number;
-    // Add other properties if needed
 };
 
 const Reports = () => {

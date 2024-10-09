@@ -74,11 +74,11 @@ Used technologies for the project:
 ## Views
 
 - Home view
-<img src="./public/main_view.png" width="600" height="600" align="center">
+<img src="./public/main_view.png" width="600" height="auto" align="center">
 - Reception view
-<img src="./public/random_view.png" width="600" height="600" align="center">
+<img src="./public/random_view.png" width="600" height="auto" align="center">
 - Login view
-<img src="./public/login_view.png" width="600" height="600" align="center">
+<img src="./public/login_view.png" width="600" height="auto" align="center">
 
 
 ## Future functionalities 

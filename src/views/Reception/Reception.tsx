@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Container, Typography, Button, MenuItem, FormControl, InputLabel, Select } from '@mui/material';
 import { Navbar } from '../../components/Navbar/Navbar';
 import { checkIn, checkOut, getUserBookings } from '../../services/apiCalls';
