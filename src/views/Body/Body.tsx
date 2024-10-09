@@ -4,7 +4,6 @@ import { Error } from '../Error/Error'
 import { Home } from '../Home/Home'
 import { Register } from '../Register/Register'
 import { New } from '../Bookings/New/New.tsx'
-import { Reports } from '../Reports/Reports.tsx'
 import { Users } from '../Users/Users.tsx'
 import { Rooms } from '../Rooms/Rooms.tsx'
 import { Pricing } from '../Pricing/Pricing.tsx'
@@ -13,8 +12,15 @@ import { Reception } from '../Reception/Reception.tsx'
 import Current from '../Bookings/Current/Current.tsx'
 import Availability from '../Availability/Availability.tsx'
 import Profile from '../Profile/Profile.tsx'
+import Reports from '../Reports/Reports.tsx'
 
 export const Body = () => {
+  const passport = JSON.parse(localStorage.getItem("passport") || '{}');
+  let role = null
+  if (passport) {
+    role = passport.tokenData.role;
+  }
+
   return (
     <>
     <Routes>
@@ -24,16 +30,16 @@ export const Body = () => {
         <Route path="/bookings" element={<Current />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/reports" element={<Reports />} />
         <Route path="/users" element={<Users />} />
         <Route path="/rooms" element={<Rooms />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/availability" element={<Availability />} />
         <Route path="/reception" element={<Reception />} />
+        { role === "admin" && 
+        <Route path='/reports' element={<Reports />}/>
+        }
         <Route path="/profile" element={<Profile />} />
     </Routes>
     </>
   )
 }
-
-//TODO protect new booking

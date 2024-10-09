@@ -66,6 +66,7 @@ const Profile = () => {
 
   return (
     <>
+    <div className='backgroundAVB'>
       <Navbar />
     <Container component="main" maxWidth="sm" sx={{ mt: 4 }}>
       <Paper elevation={6} sx={{ p: 4 }}>
@@ -106,6 +107,7 @@ const Profile = () => {
         )}
       </Paper>
     </Container>
+        </div>
         </>
   );
 };

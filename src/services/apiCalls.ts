@@ -128,3 +128,56 @@ export const updateProfile = async (token: string, profileData: Record<string, a
 
   return await response.json();
 };
+
+
+export const getDailyReport = async (token: string) => {
+  const response = await fetch(`${URL}/report/daily`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }
+  });
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch daily report: ${response.status} - ${response.statusText}`);
+  }
+
+  return await response.json();
+};
+
+export const getDateReport = async (startDate: Date, endDate: Date, token: string) => {
+  const response = await fetch(`${URL}/report/period`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify({
+      start_date: startDate.toISOString(),
+      end_date: endDate.toISOString()
+    })
+  });
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch date range report: ${response.status} - ${response.statusText}`);
+  }
+
+  return await response.json();
+};
+
+export const getRoomReport = async (roomId: number, token: string) => {
+  const response = await fetch(`${URL}/report/room-usage/${roomId}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }
+  });
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch room report: ${response.status} - ${response.statusText}`);
+  }
+
+  return await response.json();
+};
