@@ -15,31 +15,33 @@ import Profile from '../Profile/Profile.tsx'
 import Reports from '../Reports/Reports.tsx'
 
 export const Body = () => {
-  const passport = JSON.parse(localStorage.getItem("passport") || '{}');
-  let role = null
-  if (passport) {
+  const passportStr = localStorage.getItem("passport");
+  const passport = passportStr ? JSON.parse(passportStr) : null;
+  let role = null;
+  
+  if (passport && passport.tokenData && typeof passport.tokenData.role === 'string') {
     role = passport.tokenData.role;
   }
 
   return (
     <>
-    <Routes>
-        <Route path="*" element={<Error />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/bookings/new" element={<New />} />
-        <Route path="/bookings" element={<Current />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/users" element={<Users />} />
-        <Route path="/rooms" element={<Rooms />} />
-        <Route path="/pricing" element={<Pricing />} />
-        <Route path="/availability" element={<Availability />} />
-        <Route path="/reception" element={<Reception />} />
-        { role === "admin" && 
-        <Route path='/reports' element={<Reports />}/>
-        }
-        <Route path="/profile" element={<Profile />} />
-    </Routes>
+      <Routes>
+          <Route path="*" element={<Error />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/bookings/new" element={<New />} />
+          <Route path="/bookings" element={<Current />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/rooms" element={<Rooms />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/availability" element={<Availability />} />
+          <Route path="/reception" element={<Reception />} />
+          <Route path="/profile" element={<Profile />} />
+          { role === "admin" && 
+            <Route path='/reports' element={<Reports />}/>
+          }
+      </Routes>
     </>
   )
 }
