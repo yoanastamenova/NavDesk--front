@@ -12,6 +12,7 @@ import Login from '../Login/Login.tsx'
 import { Reception } from '../Reception/Reception.tsx'
 import Current from '../Bookings/Current/Current.tsx'
 import Availability from '../Availability/Availability.tsx'
+import Profile from '../Profile/Profile.tsx'
 
 export const Body = () => {
   return (
@@ -29,6 +30,7 @@ export const Body = () => {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/availability" element={<Availability />} />
         <Route path="/reception" element={<Reception />} />
+        <Route path="/profile" element={<Profile />} />
     </Routes>
     </>
   )

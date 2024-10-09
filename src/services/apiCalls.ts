@@ -94,3 +94,37 @@ export const checkOut = async (id: string, token: string) => {
   });
   return response.json();
 };
+
+export const getProfile = async (token: string) => {
+  const response = await fetch(`${URL}/users/profile`, {
+    method: "GET",
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }
+  });
+
+  if (!response.ok) {
+    throw new Error(`An error has occured: ${response.status} - ${response.statusText}`);
+  }
+
+  return await response.json();
+};
+
+export const updateProfile = async (token: string, profileData: Record<string, any>): Promise<any> => {
+  const response = await fetch(`${URL}/users/profile/update`, { 
+    method: "PUT",
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify(profileData)
+  });
+
+  if (!response.ok) {
+    const errorResponse = await response.json();
+    throw new Error(`An error has occurred: ${response.status} - ${errorResponse.message}`);
+  }
+
+  return await response.json();
+};
