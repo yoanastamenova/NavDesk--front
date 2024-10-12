@@ -129,7 +129,6 @@ export const updateProfile = async (token: string, profileData: Record<string, a
   return await response.json();
 };
 
-
 export const getDailyReport = async (token: string) => {
   const response = await fetch(`${URL}/report/daily`, {
     method: 'POST',
@@ -177,6 +176,41 @@ export const getRoomReport = async (roomId: number, token: string) => {
 
   if (!response.ok) {
     throw new Error(`Failed to fetch room report: ${response.status} - ${response.statusText}`);
+  }
+
+  return await response.json();
+};
+
+export const updateBooking = async (bookingId: string, entryDatetime: string, exitDatetime: string, token: string) => {
+  const response = await fetch(`${URL}/access/update/${bookingId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`
+    },
+    body: JSON.stringify({ entry_datetime: entryDatetime, exit_datetime: exitDatetime })
+  });
+
+  if (!response.ok) {
+    const errorResponse = await response.json();
+    throw new Error(`An error has occurred: ${response.status} - ${errorResponse.message}`);
+  }
+
+  return await response.json();
+};
+
+export const deleteBooking = async (bookingId: string, token: string) => {
+  const response = await fetch(`${URL}/reservations/${bookingId}/delete`, {
+    method: "DELETE",
+    headers: {
+      "Authorization": `Bearer ${token}`,
+      "Content-Type": "application/json"
+    }
+  });
+
+  if (!response.ok) {
+    const errorResponse = await response.json();
+    throw new Error(`An error has occurred: ${response.status} - ${errorResponse.message}`);
   }
 
   return await response.json();
