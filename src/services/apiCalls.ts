@@ -147,19 +147,19 @@ export const getDailyReport = async (token: string) => {
 
 export const getDateReport = async (startDate: Date, endDate: Date, token: string) => {
   const response = await fetch(`${URL}/report/period`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
-    },
-    body: JSON.stringify({
-      start_date: startDate.toISOString(),
-      end_date: endDate.toISOString()
-    })
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify({
+          start_time: startDate.toString(),
+          end_time: endDate.toString()
+      })
   });
 
   if (!response.ok) {
-    throw new Error(`Failed to fetch date range report: ${response.status} - ${response.statusText}`);
+      throw new Error(`Failed to fetch date range report: ${response.status} - ${response.statusText}`);
   }
 
   return await response.json();

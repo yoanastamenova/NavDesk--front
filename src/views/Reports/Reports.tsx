@@ -8,6 +8,8 @@ import { getDailyReport, getDateReport, getRoomReport } from '../../services/api
 type ReportData = {
     total_entries: number;
     total_absences: number;
+    frequent_users: string;
+    infrequent_users: string;
 };
 
 const Reports = () => {
@@ -86,7 +88,7 @@ const Reports = () => {
                         <Box mt={2}>
                             <TextField
                                 label="Start Date"
-                                type="date"
+                                type="datetime-local"
                                 value={startDate}
                                 onChange={(e) => setStartDate(e.target.value)}
                                 fullWidth
@@ -94,7 +96,7 @@ const Reports = () => {
                             />
                             <TextField
                                 label="End Date"
-                                type="date"
+                                type="datetime-local"
                                 value={endDate}
                                 onChange={(e) => setEndDate(e.target.value)}
                                 fullWidth
@@ -122,16 +124,14 @@ const Reports = () => {
                         <Box sx={{ color: "black"}}>
                             <Typography variant="h6">Report Details:</Typography>
                             <Divider sx={{ mb: 2 }} />
-                            {reportType === 'room' && reportData && Array.isArray(reportData) ? ( // Check if reportData is an array
-                                reportData.map((entry, index) => ( // No need to cast reportData
+                            {reportType === 'room' && reportData && Array.isArray(reportData) ? ( 
+                                reportData.map((entry, index) => (
                                     <Box key={index}>
                                         <Typography>Entry ID: {entry.id}</Typography>
                                         <Typography>User ID: {entry.user_id}</Typography>
                                         <Typography>Room ID: {entry.room_id}</Typography>
                                         <Typography>Entry Time: {new Date(entry.entry_datetime).toLocaleString()}</Typography>
-                                        <Typography>Exit Time: {new Date(entry.exit_datetime).toLocaleString()}</Typography>
-                                        <Typography>Status: {entry.state}</Typography>
-                                        <Typography>Current Occupants: {entry.current_occupants}</Typography>
+                                        <Typography>Exit Time: {new Date(entry.exit_datetime).toLocaleString()}</Typography>                                        
                                         <Divider sx={{ my: 2 }} />
                                     </Box>
                                 ))
@@ -141,6 +141,8 @@ const Reports = () => {
                                         <>
                                             <Typography>Total Entries: {reportData.total_entries}</Typography>
                                             <Typography>Total Absences: {reportData.total_absences}</Typography>
+                                            <Typography>Frequent Users: {reportData.frequent_users}</Typography>
+                                            <Typography>Infrequent Users: {reportData.infrequent_users}</Typography>
                                         </>
                                     )}
                                 </>
