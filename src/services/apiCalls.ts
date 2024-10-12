@@ -200,7 +200,7 @@ export const updateBooking = async (bookingId: string, entryDatetime: string, ex
 };
 
 export const deleteBooking = async (bookingId: string, token: string) => {
-  const response = await fetch(`${URL}/reservations/${bookingId}/delete`, {
+  const response = await fetch(`${URL}/access/cancel/${bookingId}`, {
     method: "DELETE",
     headers: {
       "Authorization": `Bearer ${token}`,
