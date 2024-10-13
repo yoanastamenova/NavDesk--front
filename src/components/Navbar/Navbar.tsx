@@ -24,6 +24,14 @@ export const Navbar = () => {
     null
   );
 
+  const passportStr = localStorage.getItem("passport");
+  const passport = passportStr ? JSON.parse(passportStr) : null;
+  let role = null;
+  
+  if (passport && passport.tokenData && typeof passport.tokenData.role === 'string') {
+    role = passport.tokenData.role;
+  }
+
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget as HTMLElement);
   };
@@ -122,7 +130,12 @@ export const Navbar = () => {
                     <Button onClick={() => handleOnClick('/reception')} sx={{ my: 2, color: "white", display: "block" }}>Reception</Button>
                     <Button onClick={() => handleOnClick('/bookings')} sx={{ my: 2, color: "white", display: "block" }}>Booking</Button>
                     <Button onClick={() => handleOnClick('/register')} sx={{ my: 2, color: "white", display: "block" }}>Register</Button>
-                </Box>
+                    {role === 'admin' && (
+                        <Button onClick={() => handleOnClick('/reports')} sx={{ my: 2, color: "white", display: "block" }}>
+                            Reports
+                        </Button>
+                    )}
+                    </Box> 
 
                 <Box sx={{ flexGrow: 0 }}>
                     <Tooltip title="Open settings">
