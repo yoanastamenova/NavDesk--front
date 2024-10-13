@@ -215,3 +215,24 @@ export const deleteBooking = async (bookingId: string, token: string) => {
 
   return await response.json();
 };
+
+export const getHistories = async (startDate: Date, endDate: Date, token:string) => {
+  const response = await fetch(`${URL}/history/period`, {
+      method: "POST",
+      headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify({ start_date: startDate, end_date: endDate })
+  });
+  return response.json();
+};
+
+export const getRoomHistory = async (roomId: number, token: string) => {
+  const response = await fetch(`${URL}/history/room/${roomId}`, {
+      headers: {
+          'Authorization': `Bearer ${token}`
+      }
+  });
+  return response.json();
+};

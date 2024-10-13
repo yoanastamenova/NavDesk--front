@@ -11,6 +11,7 @@ import Current from '../Bookings/Current/Current.tsx'
 import Availability from '../Availability/Availability.tsx'
 import Profile from '../Profile/Profile.tsx'
 import Reports from '../Reports/Reports.tsx'
+import History from '../History/History.tsx'
 
 export const Body = () => {
   const passportStr = localStorage.getItem("passport");
@@ -36,7 +37,10 @@ export const Body = () => {
           <Route path="/reception" element={<Reception />} />
           <Route path="/profile" element={<Profile />} />
           { role === "admin" && 
+          <>
             <Route path='/reports' element={<Reports />}/>
+            <Route path='/history' element={<History />} />
+          </>
           }
       </Routes>
     </>

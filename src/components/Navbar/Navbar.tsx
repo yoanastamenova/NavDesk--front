@@ -131,9 +131,14 @@ export const Navbar = () => {
                     <Button onClick={() => handleOnClick('/bookings')} sx={{ my: 2, color: "white", display: "block" }}>Booking</Button>
                     <Button onClick={() => handleOnClick('/register')} sx={{ my: 2, color: "white", display: "block" }}>Register</Button>
                     {role === 'admin' && (
+                        <>
                         <Button onClick={() => handleOnClick('/reports')} sx={{ my: 2, color: "white", display: "block" }}>
                             Reports
                         </Button>
+                        <Button onClick={() => handleOnClick('/history')} sx={{ my: 2, color: "white", display: "block" }}>
+                        History
+                      </Button>
+                        </>
                     )}
                     </Box> 
 
