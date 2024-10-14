@@ -22,7 +22,7 @@ Welcome to the Frontend part of NavDesk. This is a Co-Working App project provid
 
 ## About the project 📁
 
-This project provides a rich front-end application built with React, TypeScript, Vite, and MUI. It interfaces with the NavDesk backend server to manage access and administration within a co-working space. Users can register, log in, view rooms, make bookings, and admins have additional functionalities like managing room assignments and viewing extensive reports.
+This project provides a rich front-end application built with React, TypeScript, Vite, and MUI. It interfaces with the NavDesk backend server to manage access and administration within a co-working space. Users can register, log in, view rooms, make bookings, and admins have additional functionalities like managing room assignments and viewing extensive reports. For admins there is a special part where reports can be obtained and as well detailed history for bookings, users and rooms.
 
 <img src="./public/event.png" width="500" height="auto" align="center">
 
@@ -56,6 +56,8 @@ Used technologies for the project:
 
 
 ## Local installation option ⚙️
+Make sure you have the REST API which can be found here - https://github.com/yoanastamenova/NavDesk--back
+
 - Before starting it is important to have SQL and MySQLWorkbench installed locally in order to work with the database. If you dont have it or simply prefer to use a Docker configuration please follow the steps bellow and then you can continue with the clone.
   -1- Create docker SQL Image `docker build -t mssql-app`
   -2- Create a SQL container `docker run -d --name mssql-container -p 3306:3306 mssql-app`
